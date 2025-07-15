@@ -11,7 +11,7 @@ console.log(PORT);
 const app = express();
 
 // RUTAS
-app.get("/", (req.res) => {
+app.get("/", (req, res) => {
 
 });
 
