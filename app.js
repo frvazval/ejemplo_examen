@@ -10,12 +10,16 @@ const PORT = process.env.PORT || 5000;
 // Crear la aplicación
 const app = express();
 
+// Ruta de los ficheros estaticos
+app.use.apply(express.static(process.cwd() + "/public"));
+
 // RUTAS
 app.get("/", (req, res) => {
-    res.send("Aqui irá la página inicial");
+    res.sendFile("index.html");
+    // res.send("Aqui irá la página inicial");
 });
 
-app.get("/alumno", (req, res) => {
+app.get("/alumnos", (req, res) => {
     const query = "SELECT * FROM alumno";
     connection.query(query, (err, result, fields) => {
         if(err) throw err;
@@ -24,7 +28,7 @@ app.get("/alumno", (req, res) => {
     })
 });
 
-app.get("/alumno/:apellido1", (req, res) => {
+app.get("/alumnos/:apellido1", (req, res) => {
     const query = `SELECT * FROM alumno WHERE apellido1 LIKE "${req.params.apellido1}%" ORDER BY apellido1, apellido2`
     connection.query(query, (err, result, fields) => {
         if(err) throw err;        
