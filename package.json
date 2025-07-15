@@ -1,0 +1,25 @@
+{
+  "name": "ejemplo_examen",
+  "version": "1.0.0",
+  "description": "Ejemplo del examen",
+  "keywords": [
+    "MySQL",
+    "Express"
+  ],
+  "homepage": "https://github.com/frvazval/ejemplo_examen#readme",
+  "bugs": {
+    "url": "https://github.com/frvazval/ejemplo_examen/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/frvazval/ejemplo_examen.git"
+  },
+  "license": "ISC",
+  "author": "Paco",
+  "type": "module",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node --watch app.js"
+  }
+}
