@@ -12,7 +12,7 @@ const app = express();
 
 // RUTAS
 app.get("/", (req, res) => {
-
+    res.send("Aqui irá la página inicial");
 });
 
 // 
