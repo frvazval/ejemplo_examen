@@ -6,7 +6,6 @@ import {connection} from "./mysql/mysql.js";
 process.loadEnvFile();
 const PORT = process.env.PORT || 5000;
 // console.log(PORT);
-const HOST = process.env.DB_HOST;
 
 // Crear la aplicación
 const app = express();
@@ -34,4 +33,4 @@ app.get("/alumno/:apellido1", (req, res) => {
 });
 
 // 
-app.listen(PORT, () => console.log(`Servidor abierto en http://${HOST}:${PORT}`));
+app.listen(PORT, () => console.log(`Servidor abierto en http://localhost:${PORT}`));
