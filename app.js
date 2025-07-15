@@ -10,4 +10,10 @@ console.log(PORT);
 // Crear la aplicación
 const app = express();
 
+// RUTAS
+app.get("/", (req.res) => {
+
+});
+
 // 
+app.listen(PORT, () => console.log(`Servidor abierto en http://127.0.0.1:${PORT}`));
