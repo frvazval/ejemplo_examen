@@ -1,0 +1,3 @@
+El contenido de esta carpeta hay que guardarlo en la ruta
+C:\ProgramData\MySQL\MySQL Server 8.4\Uploads
+y modificar en el script sql Server 8.0, hay que cambiarlo por Server 8.4, hay que modificarlo en 3 lineas
