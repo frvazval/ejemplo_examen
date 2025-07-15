@@ -24,8 +24,8 @@ app.get("/alumno", (req, res) => {
     })
 });
 
-app.get("/alumno/:valor", (req, res) => {
-    const query = `SELECT * FROM alumno WHERE apellido1 LIKE "${req.params.valor}%" ORDER BY apellido1, apellido2`
+app.get("/alumno/:apellido1", (req, res) => {
+    const query = `SELECT * FROM alumno WHERE apellido1 LIKE "${req.params.apellido1}%" ORDER BY apellido1, apellido2`
     connection.query(query, (err, result, fields) => {
         if(err) throw err;
         // console.log(result);
