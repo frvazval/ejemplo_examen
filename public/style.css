@@ -40,3 +40,20 @@ dl {
         margin: 1rem;
     }
 }
+
+.enlace {
+    color:maroon;
+    font-weight: bold;
+}
+
+a {
+    text-decoration: none;
+}
+
+input {
+    color: maroon;
+    font-size: 1rem;
+    font-weight: bold;
+    outline: none;
+    border: none;
+}
