@@ -16,11 +16,13 @@ h1, h2 {
 
 h1 {
     font-size: 3rem;    
-    text-align: center;    
+    text-align: center;  
+    margin: 2rem 0;  
 }
 
 h2 {
     font-size: 2rem;
+    text-align: center;
 }
 
 section {
