@@ -11,7 +11,7 @@ const PORT = process.env.PORT || 5000;
 const app = express();
 
 // Ruta de los ficheros estaticos
-app.use.apply(express.static(process.cwd() + "/public"));
+app.use(express.static(process.cwd() + "/public"));
 
 // RUTAS
 app.get("/", (req, res) => {
