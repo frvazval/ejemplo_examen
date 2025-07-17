@@ -39,7 +39,22 @@ app.get("/alumnos/:apellido1", (req, res) => {
     })
 });
 
-// Ruta 404
+// apellidoProfe/nombreProfe -> nombre, apellido, asignaturas
+// {"nombre_profesor": "Rafael","apellido_profesor": "Murcia", "asignaturas": ["x", "y", "z", ...]}
+app.get("/profesor/:nombre/:apellido", (req, res) => {
+    const query = `
+    SELECT a.nombre
+    FROM profesor p 
+    NATURAL JOIN impartir i 
+    INNER JOIN asignatura a ON i.idAsignatura = a.idAsignatura
+    WHERE p.nombre = ${req.params.nombre} AND p.apellido1 = ${req.params.apellido}
+    `;
+})
 
+
+// Ruta 404
+app.use((req, res) => {
+    Res.status(404).send("<h1>Página no encontrada</h1>"); 
+});
 
 app.listen(PORT, () => console.log(`Servidor abierto en http://localhost:${PORT}`));
