@@ -1,0 +1,40 @@
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background-color: gray;
+    margin: 2rem 0;
+}
+
+h1, h2 {
+    color: darksalmon;
+}
+
+h1 {
+    font-size: 3rem;    
+    text-align: center;    
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+section {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+dl {
+    margin: 2rem;
+    border: 2px solid darksalmon;
+    padding: 1rem;
+    border-radius: 10px;
+
+    > div {
+        margin: 1rem;
+    }
+}
