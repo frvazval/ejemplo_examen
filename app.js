@@ -34,7 +34,7 @@ app.get("/alumnos/:apellido1", (req, res) => {
         if(err) throw err;
         if (result.length == 0) {
             return res.status(404).json({"mensaje": "Alumno no encontrado"});
-        }       
+        };       
         res.json(result);
     })
 });
@@ -49,7 +49,15 @@ app.get("/profesor/:nombre/:apellido", (req, res) => {
     INNER JOIN asignatura a ON i.idAsignatura = a.idAsignatura
     WHERE p.nombre = ${req.params.nombre} AND p.apellido1 = ${req.params.apellido}
     `;
-})
+
+    connection.query(query, (err, result) => {
+        if(err) throw err;
+        if (result.length == 0) {
+            return res.status(404).json({"mensaje": "Profesor no encontrado"});
+        };  
+        res.json(result);
+    })
+});
 
 
 // Ruta 404
