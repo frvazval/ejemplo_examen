@@ -43,19 +43,33 @@ app.get("/alumnos/:apellido1", (req, res) => {
 // {"nombre_profesor": "Rafael","apellido_profesor": "Murcia", "asignaturas": ["x", "y", "z", ...]}
 app.get("/profesor/:nombre/:apellido", (req, res) => {
     const query = `
-    SELECT a.nombre
+    SELECT a.nombre AS asignatura, p.nombre, p.apellido1
     FROM profesor p 
     NATURAL JOIN impartir i 
     INNER JOIN asignatura a ON i.idAsignatura = a.idAsignatura
-    WHERE p.nombre = ${req.params.nombre} AND p.apellido1 = ${req.params.apellido}
+    WHERE p.nombre = '${req.params.nombre}' AND p.apellido1 = '${req.params.apellido}'
     `;
+
+    let nombre = "";
+    let apellido = "";
 
     connection.query(query, (err, result) => {
         if(err) throw err;
         if (result.length == 0) {
             return res.status(404).json({"mensaje": "Profesor no encontrado"});
         };  
-        res.json(result);
+        // res.json(result);
+        let asignaturas = [];        
+        nombre = result[0].nombre;
+        apellido =  result[0].apellido1;
+        for (let i = 0; i < result.length; i++) {
+            asignaturas.push(result[i].asignatura)
+        }
+
+        // console.log(asignaturas);
+
+        res.json({'nombre': nombre, 'apellido': apellido, 'asignaturas': asignaturas})
+
     })
 });
 
