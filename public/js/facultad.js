@@ -17,5 +17,4 @@ formAsignaturasProfesor.addEventListener('submit', (e) => {
     let apellido = document.getElementById('apellido-profesor').value;
     let ruta = "/profesor/" + nombre + "/" + apellido;
     window.location.href = ruta;
-
 })
