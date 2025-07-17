@@ -79,4 +79,5 @@ app.use((req, res) => {
     Res.status(404).send("<h1>Página no encontrada</h1>"); 
 });
 
+// Abrir el servidor en el puerto seleccionado
 app.listen(PORT, () => console.log(`Servidor abierto en http://localhost:${PORT}`));
